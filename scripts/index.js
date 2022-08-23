@@ -1,5 +1,8 @@
 'use strict';
 
+/* outputs */
+const g_emptyUrlMessages = 'Please input a valid URL above';
+
 /* fetch dom elements */
 const xumoInputUrl = document.getElementById('xumourl');
 const outputUrl = document.getElementById('outputUrl');
@@ -56,6 +59,12 @@ function parseUrl(xumoUrl) {
 
 function inputHandler(e) {
   try {
+    const inputUrl = e.target.value;
+    if (!inputUrl) {
+      outputUrl.value = g_emptyUrlMessages;
+      return;
+    }
+
     const finalUrl = parseUrl(e.target.value);
     outputUrl.value = finalUrl;
   } catch (Error) {
