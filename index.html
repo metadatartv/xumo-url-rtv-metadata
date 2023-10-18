@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -15,21 +11,23 @@
 </head>
 
 <body>
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  <h1>
-    Xumo URL parser
-  </h1>
-  <br>
-  <label for="xumourl">Enter URL:</label>
-  <textarea row="1" cols="80" name="xumourl" id="xumourl" style="width:900px;height:450px;font-size:14pt;"></textarea>
-  <hr>
-  <label for="outputUrl">Parsed URL:</label>
-  <textarea row="1" cols="80" name="outputUrl" id="outputUrl" style="width:900px;height:250px;font-size:14pt;">
-Please input a valid URL above
+  <header>
+    <h1>XUMO URL PARSER FOR <span class="rakuten">RAKUTEN TV</span></h1>
+  </header>
+  <div class="test">
+    <span>Enter URL</span>
+    <span>Parsed URL</span>
+  </div>
+  <main class="mainContainer">
+    <!--     <label for="xumourl">Enter URL:</label> -->
+    <textarea row="1" cols="80" name="xumourl" id="xumourl" autocomplete="off"></textarea>
+    <!--     <label for="outputUrl">Parsed URL:</label> -->
+    <textarea row="1" cols="80" name="outputUrl" id="outputUrl" autocomplete="off">
   </textarea>
+  </main>
+  <footer>
+    <img src="/img/RTV_logo_white.png" alt="RakutenTV logo" width="450" height="100">
+  </footer>
   <script src="scripts/index.js" async defer></script>
 </body>
 
