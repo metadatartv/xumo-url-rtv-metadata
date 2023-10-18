@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Xumo URL parser</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="shortcut icon" href="img/favicon_rakuten.png" type="image/x-icon">
 </head>
 
 <body>
@@ -22,11 +23,18 @@
     <!--     <label for="xumourl">Enter URL:</label> -->
     <textarea row="1" cols="80" name="xumourl" id="xumourl" autocomplete="off"></textarea>
     <!--     <label for="outputUrl">Parsed URL:</label> -->
+    <h1>Xumo URL parser for <span class="rakuten">RAKUTEN TV</span></h1>
+  </header>
+  <main class="mainContainer">
+    <label for="xumourl">Enter URL:</label>
+    <textarea row="1" cols="80" name="xumourl" id="xumourl" autocomplete="off"></textarea>
+    <label for="outputUrl">Parsed URL:</label>
     <textarea row="1" cols="80" name="outputUrl" id="outputUrl" autocomplete="off">
   </textarea>
   </main>
   <footer>
     <img src="/img/RTV_logo_white.png" alt="RakutenTV logo" width="450" height="100">
+    <img src="/img/RTV_logo.png" alt="RakutenTV logo" width="450" height="100">
   </footer>
   <script src="scripts/index.js" async defer></script>
 </body>
