@@ -24,12 +24,13 @@ h1 {
 textarea {
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
   border-radius: 25px 25px 25px 25px;
-  width: 500px;
-  height: 250px;
+  width: 550px;
+  height: 350px;
   font-size: 10pt;
   padding: 20px;
   resize: none;
   outline: none;
+  overflow: auto;
 }
 
 .enterUrlContainer {
