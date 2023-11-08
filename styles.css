@@ -46,7 +46,7 @@ textarea {
 
 .urlContainer {
   display: flex;
-  gap: 130px;
+  gap: 50px;
   justify-content: center;
 }
 
