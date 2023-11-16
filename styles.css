@@ -32,6 +32,14 @@ textarea {
   outline: none;
 }
 
+button {
+  font-family: inherit;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  /* background-color: transparent; */
+}
+
 .enterUrlContainer {
   display: flex;
   flex-direction: column;
@@ -58,4 +66,9 @@ footer {
 header {
   text-align: center;
   margin-bottom: 80px;
+}
+
+.copyUrl {
+  display: flex;
+  justify-content: center;
 }
