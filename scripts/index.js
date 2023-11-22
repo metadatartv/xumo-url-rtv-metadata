@@ -75,9 +75,11 @@ function inputHandler(e) {
 }
 
 function copyURl() {
+
   const text = document.getElementById("outputUrl");
   text.select();
   document.execCommand("copy");
+
 }
 
 /* @TODO 
