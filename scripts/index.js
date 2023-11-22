@@ -1,39 +1,41 @@
-'use strict';
+"use strict";
 
 /* outputs */
-const g_emptyUrlMessages = 'Please input a valid URL above';
+const g_emptyUrlMessages = "Please input a valid URL above";
 
 /* fetch dom elements */
-const xumoInputUrl = document.getElementById('xumourl');
-const outputUrl = document.getElementById('outputUrl');
+const xumoInputUrl = document.getElementById("xumourl");
+const outputUrl = document.getElementById("outputUrl");
+const copyOutputUrl = document.getElementById("copyFinalUrl");
 
 /* set input handler, no submit button!  */
-xumoInputUrl.addEventListener('input', inputHandler);
-xumoInputUrl.addEventListener('propertychange', inputHandler); // for IE8
+xumoInputUrl.addEventListener("input", inputHandler);
+xumoInputUrl.addEventListener("propertychange", inputHandler); // for IE8
+copyOutputUrl.addEventListener("click", copyURl);
 
 /** select the mandatory params out of all params */
 function getMandatoryStaticParams(originalParamList) {
   const originalUrlParams = new URLSearchParams(originalParamList);
   let minUrlParams = new URLSearchParams();
   const mandatoryParams = [
-    'ads.caid',
-    'ads.csid',
-    'ads._fw_content_category',
-    'ads._fw_content_genre',
-    'ads._fw_content_language',
-    'ads._fw_content_rating',
-    'ads.xumo_contentId',
-    'ads.xumo_contentName',
-    'ads.xumo_providerId',
-    'ads.xumo_providerName',
+    "ads.caid",
+    "ads.csid",
+    "ads._fw_content_category",
+    "ads._fw_content_genre",
+    "ads._fw_content_language",
+    "ads._fw_content_rating",
+    "ads.xumo_contentId",
+    "ads.xumo_contentName",
+    "ads.xumo_providerId",
+    "ads.xumo_providerName",
   ];
   mandatoryParams.forEach((param, i) => {
     if (!originalUrlParams.has(param)) {
-      throw new Error('Mandantory param not found:' + param);
+      throw new Error("Mandantory param not found:" + param);
     }
     minUrlParams.append(param, originalUrlParams.get(param));
   });
-  console.log('[getMandatoryStaticParams] query:', minUrlParams.toString());
+  console.log("[getMandatoryStaticParams] query:", minUrlParams.toString());
   return minUrlParams.toString();
 }
 
@@ -52,7 +54,7 @@ function parseUrl(xumoUrl) {
 
   const finalParams = getMandatoryStaticParams(params);
 
-  const finalUrl = protocol + '//' + hostName + pathName + '?' + finalParams;
+  const finalUrl = protocol + "//" + hostName + pathName + "?" + finalParams;
 
   return finalUrl;
 }
@@ -68,8 +70,14 @@ function inputHandler(e) {
     const finalUrl = parseUrl(e.target.value);
     outputUrl.value = finalUrl;
   } catch (Error) {
-    outputUrl.value = 'Error:' + Error.toString();
+    outputUrl.value = "Error:" + Error.toString();
   }
+}
+
+function copyURl() {
+  const text = document.getElementById("outputUrl");
+  text.select();
+  document.execCommand("copy");
 }
 
 /* @TODO 
