@@ -75,15 +75,11 @@ function inputHandler(e) {
 }
 
 function copyURl() {
-  outputUrl.select();
-  navigator.clipboard(outputUrl.value).then(
-    () => {
-      console.log("Content copied to clipboard");
-    },
-    () => {
-      console.error("Failed to copy");
-    }
-  );
+
+  const text = document.getElementById("outputUrl");
+  text.select();
+  document.execCommand("copy");
+
 }
 
 /* @TODO 

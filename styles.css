@@ -38,7 +38,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  /* background-color: transparent; */
+
+}
+
+button:hover {
+  background-color: grey;
+
 }
 
 .enterUrlContainer {
